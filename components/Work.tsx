@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -137,18 +140,39 @@ const Hire = () => {
       {/* Why Hire Section */}
       <section>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 lg:pt-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-primary text-center font-semibold">
+          <motion.h2
+            className="text-3xl sm:text-4xl lg:text-5xl text-primary text-center font-semibold"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             Why Hire Developers From Our Name
-          </h2>
-          <p className="text-secondary text-sm md:text-[0.938rem] max-w-xl text-center mx-auto mt-4 md:mt-5 leading-7 md:leading-8 px-4">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="text-secondary text-sm md:text-[0.938rem] max-w-xl text-center mx-auto mt-4 md:mt-5 leading-7 md:leading-8 px-4"
+          >
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry&apos;s standard dummy
             text ever since
-          </p>
+          </motion.p>
 
           {/* High Quality Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-8 md:mt-12 items-center">
-            <div className="order-2 lg:order-1 flex justify-center">
+            <motion.div
+              className="order-2 lg:order-1 flex justify-center"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <Image
                 src="/images/hire-banner.png"
                 alt="Why Hire Developers From Our Name"
@@ -157,9 +181,18 @@ const Hire = () => {
                 className="w-full max-w-md h-auto"
                 loading="lazy"
               />
-            </div>
+            </motion.div>
 
-            <div className="order-1 lg:order-2">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="order-1 lg:order-2"
+            >
               <h3 className="font-semibold text-2xl sm:text-3xl lg:text-4xl text-primary">
                 High quality/cost ratio
               </h3>
@@ -176,7 +209,7 @@ const Hire = () => {
                   description="Hire the top 1% of 1.5 million+ developers from 150+ countries who have applied to Turing."
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Rigorous Vetting Section */}

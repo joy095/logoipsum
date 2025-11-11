@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Buttons from "./Buttons";
+import { motion } from "framer-motion";
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -55,7 +56,15 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
           {/* Hero Content */}
           <div className="lg:col-span-2">
-            <div className="flex flex-col gap-4 md:gap-6">
+            <motion.div
+              className="flex flex-col gap-4 md:gap-6"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+            >
               <h1 className="uppercase">
                 <div className="text-green flex items-center gap-3 md:gap-5">
                   <span className="font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
@@ -88,11 +97,19 @@ const Hero = () => {
                   Get in touch
                 </Buttons>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Form */}
-          <div className="rounded-xl overflow-hidden shadow-lg">
+          <motion.div
+            className="rounded-xl overflow-hidden shadow-lg"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+          >
             <div className="bg-green/10 py-4 px-4 sm:px-6 text-center">
               <h3 className="font-semibold text-lg md:text-xl text-primary">
                 Create Your Team
@@ -220,7 +237,7 @@ const Hero = () => {
                 </Buttons>
               </form>
             </Form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
