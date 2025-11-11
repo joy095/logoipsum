@@ -1,280 +1,235 @@
 import Image from "next/image";
-
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-const Hire = () => {
-  const services = [
-    {
-      id: 1,
-      title: "Backend Development",
-      icon: "backend.png",
-      tags: [
-        ".NET",
-        "C/C++",
-        "DJANGO",
-        "Firebase",
-        "GOLANG",
-        "SYMFONY",
-        "LARAVEL",
-        "NODE",
-        "PHP",
-        "PYTHON",
-        "RUBY ON RAILS",
-        "JAVA",
-      ],
-      borderColor: "#B0BDFF",
-      backgroundColor: "#F3F5FF",
-    },
-    {
-      id: 2,
-      title: "Frontend Development",
-      icon: "frontend.png",
-      tags: [
-        ".NET",
-        "C/C++",
-        "DJANGO",
-        "Firebase",
-        "GOLANG",
-        "SYMFONY",
-        "LARAVEL",
-        "NODE",
-        "PHP",
-        "PYTHON",
-        "RUBY ON RAILS",
-        "JAVA",
-      ],
-      borderColor: "#FFC093",
-      backgroundColor: "#FFF3E6",
-    },
-    {
-      id: 3,
-      title: "Mobile Development",
-      icon: "mobile.png",
-      tags: [
-        ".NET",
-        "C/C++",
-        "DJANGO",
-        "Firebase",
-        "GOLANG",
-        "SYMFONY",
-        "LARAVEL",
-        "NODE",
-        "PHP",
-        "PYTHON",
-        "RUBY ON RAILS",
-        "JAVA",
-      ],
-      borderColor: "#F6BCFF",
-      backgroundColor: "#FBEEFD",
-    },
-    {
-      id: 4,
-      title: "Blockchain, Ai/ML",
-      icon: "blockchain.png",
-      tags: [
-        ".NET",
-        "C/C++",
-        "DJANGO",
-        "Firebase",
-        "GOLANG",
-        "SYMFONY",
-        "LARAVEL",
-        "NODE",
-        "PHP",
-        "PYTHON",
-        "RUBY ON RAILS",
-        "JAVA",
-      ],
-      borderColor: "#9FF3FF",
-      backgroundColor: "#EFFDFF",
-    },
-    {
-      id: 5,
-      title: "DevOps & Low-Code",
-      icon: "devops.png",
-      tags: [
-        ".NET",
-        "C/C++",
-        "DJANGO",
-        "Firebase",
-        "GOLANG",
-        "SYMFONY",
-        "LARAVEL",
-        "NODE",
-        "PHP",
-        "PYTHON",
-        "RUBY ON RAILS",
-        "JAVA",
-      ],
-      borderColor: "#FFDAA2",
-      backgroundColor: "#FBFFF1",
-    },
-    {
-      id: 6,
-      title: "E-commerce & CMS",
-      icon: "e-com.png",
-      tags: [
-        ".NET",
-        "C/C++",
-        "Django",
-        "Firebase",
-        "Golang",
-        "Symfony",
-        "Laravel",
-        "Node",
-        "PHP",
-        "Python",
-        "Ruby on Rails",
-        "Java",
-      ],
-      borderColor: "#FFBCBC",
-      backgroundColor: "#FFBCBC40",
-    },
-  ];
+const services = [
+  {
+    id: 1,
+    title: "Backend Development",
+    icon: "backend.png",
+    tags: [
+      ".NET",
+      "C/C++",
+      "DJANGO",
+      "Firebase",
+      "GOLANG",
+      "SYMFONY",
+      "LARAVEL",
+      "NODE",
+      "PHP",
+      "PYTHON",
+      "RUBY ON RAILS",
+      "JAVA",
+    ],
+    borderColor: "#B0BDFF",
+    backgroundColor: "#F3F5FF",
+  },
+  {
+    id: 2,
+    title: "Frontend Development",
+    icon: "frontend.png",
+    tags: [
+      ".NET",
+      "C/C++",
+      "DJANGO",
+      "Firebase",
+      "GOLANG",
+      "SYMFONY",
+      "LARAVEL",
+      "NODE",
+      "PHP",
+      "PYTHON",
+      "RUBY ON RAILS",
+      "JAVA",
+    ],
+    borderColor: "#FFC093",
+    backgroundColor: "#FFF3E6",
+  },
+  {
+    id: 3,
+    title: "Mobile Development",
+    icon: "mobile.png",
+    tags: [
+      ".NET",
+      "C/C++",
+      "DJANGO",
+      "Firebase",
+      "GOLANG",
+      "SYMFONY",
+      "LARAVEL",
+      "NODE",
+      "PHP",
+      "PYTHON",
+      "RUBY ON RAILS",
+      "JAVA",
+    ],
+    borderColor: "#F6BCFF",
+    backgroundColor: "#FBEEFD",
+  },
+  {
+    id: 4,
+    title: "Blockchain, Ai/ML",
+    icon: "blockchain.png",
+    tags: [
+      ".NET",
+      "C/C++",
+      "DJANGO",
+      "Firebase",
+      "GOLANG",
+      "SYMFONY",
+      "LARAVEL",
+      "NODE",
+      "PHP",
+      "PYTHON",
+      "RUBY ON RAILS",
+      "JAVA",
+    ],
+    borderColor: "#9FF3FF",
+    backgroundColor: "#EFFDFF",
+  },
+  {
+    id: 5,
+    title: "DevOps & Low-Code",
+    icon: "devops.png",
+    tags: [
+      ".NET",
+      "C/C++",
+      "DJANGO",
+      "Firebase",
+      "GOLANG",
+      "SYMFONY",
+      "LARAVEL",
+      "NODE",
+      "PHP",
+      "PYTHON",
+      "RUBY ON RAILS",
+      "JAVA",
+    ],
+    borderColor: "#FFDAA2",
+    backgroundColor: "#FBFFF1",
+  },
+  {
+    id: 6,
+    title: "E-commerce & CMS",
+    icon: "e-com.png",
+    tags: [
+      ".NET",
+      "C/C++",
+      "Django",
+      "Firebase",
+      "Golang",
+      "Symfony",
+      "Laravel",
+      "Node",
+      "PHP",
+      "Python",
+      "Ruby on Rails",
+      "Java",
+    ],
+    borderColor: "#FFBCBC",
+    backgroundColor: "#FFBCBC40",
+  },
+];
 
+const Hire = () => {
   return (
-    <div className="bg-[url(/images/work-banner.png)] bg-no-repeat bg-cover bg-top min-h-svh w-full pb-20">
+    <div className="bg-[url(/images/work-banner.png)] bg-no-repeat bg-cover bg-top w-full pb-12 md:pb-20">
+      {/* Why Hire Section */}
       <section>
-        <div className="container mx-auto pt-20">
-          <h2 className="text-5xl text-primary text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 lg:pt-20">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-primary text-center font-semibold">
             Why Hire Developers From Our Name
           </h2>
-          <p className="text-secondary text-[0.938rem] max-w-xl text-center mx-auto mt-5 leading-8">
+          <p className="text-secondary text-sm md:text-[0.938rem] max-w-xl text-center mx-auto mt-4 md:mt-5 leading-7 md:leading-8 px-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&#39;s standard dummy
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
             text ever since
           </p>
 
-          <div className="grid grid-cols-2">
-            <Image
-              src="/images/hire-banner.png"
-              alt="Why Hire Developers From Our Name banner"
-              width={500}
-              height={500}
-            />
+          {/* High Quality Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-8 md:mt-12 items-center">
+            <div className="order-2 lg:order-1 flex justify-center">
+              <Image
+                src="/images/hire-banner.png"
+                alt="Why Hire Developers From Our Name"
+                width={500}
+                height={500}
+                className="w-full max-w-md h-auto"
+                loading="lazy"
+              />
+            </div>
 
-            <div className="pt-20">
-              <h3 className="font-semibold text-4xl text-primary">
+            <div className="order-1 lg:order-2">
+              <h3 className="font-semibold text-2xl sm:text-3xl lg:text-4xl text-primary">
                 High quality/cost ratio
               </h3>
 
-              <div className="mt-5">
-                <div className="flex gap-4 items-start">
-                  <Image
-                    src={"/icons/orange-tick.svg"}
-                    alt="icons"
-                    className="mt-2"
-                    width={20}
-                    height={20}
-                  />
-                  <div>
-                    <h2 className="text-primary text-[1.375rem]">
-                      Hire Silicon Valley caliber at half the cost
-                    </h2>
-                    <p className="text-secondary text-[0.938rem] leading-7 font-light max-w-lg">
-                      Hire the top 1% of 1.5 million+ developers from 150+
-                      countries who have applied to Turing.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3 items-start mt-4">
-                  <Image
-                    src={"/icons/green-tick.svg"}
-                    alt="icons"
-                    className="mt-2"
-                    width={20}
-                    height={20}
-                  />
-                  <div>
-                    <h2 className="text-primary text-[1.375rem]">
-                      100+ skills available
-                    </h2>
-                    <p className="text-secondary text-[0.938rem] leading-7 font-light max-w-lg">
-                      Hire the top 1% of 1.5 million+ developers from 150+
-                      countries who have applied to Turing.
-                    </p>
-                  </div>
-                </div>
+              <div className="mt-5 md:mt-6 space-y-4 md:space-y-5">
+                <FeatureItem
+                  icon="/icons/orange-tick.svg"
+                  title="Hire Silicon Valley caliber at half the cost"
+                  description="Hire the top 1% of 1.5 million+ developers from 150+ countries who have applied to Turing."
+                />
+                <FeatureItem
+                  icon="/icons/green-tick.svg"
+                  title="100+ skills available"
+                  description="Hire the top 1% of 1.5 million+ developers from 150+ countries who have applied to Turing."
+                />
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="container mx-auto pt-20">
-          <div className="grid grid-cols-2">
-            <div className="pt-20">
-              <h3 className="font-semibold text-4xl text-primary">
+          {/* Rigorous Vetting Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-12 md:mt-16 lg:mt-20 items-center">
+            <div>
+              <h3 className="font-semibold text-2xl sm:text-3xl lg:text-4xl text-primary">
                 Rigorous Vetting
               </h3>
 
-              <div className="mt-5">
-                <div className="flex gap-4 items-start">
-                  <Image
-                    src={"/icons/orange-tick.svg"}
-                    alt="icons"
-                    className="mt-2"
-                    width={20}
-                    height={20}
-                  />
-                  <div>
-                    <h2 className="text-primary text-[1.375rem]">
-                      5+ hours of tests and interviews
-                    </h2>
-                    <p className="text-secondary text-[0.938rem] leading-7 font-light max-w-lg">
-                      Hire the top 1% of 1.5 million+ developers from 150+
-                      countries who have applied to Turing.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3 items-start mt-4">
-                  <Image
-                    src={"/icons/green-tick.svg"}
-                    alt="icons"
-                    className="mt-2"
-                    width={20}
-                    height={20}
-                  />
-                  <div>
-                    <h2 className="text-primary text-[1.375rem]">
-                      Seniority tests
-                    </h2>
-                    <p className="text-secondary text-[0.938rem] leading-7 font-light max-w-lg">
-                      Hire the top 1% of 1.5 million+ developers from 150+
-                      countries who have applied to Turing.
-                    </p>
-                  </div>
-                </div>
+              <div className="mt-5 md:mt-6 space-y-4 md:space-y-5">
+                <FeatureItem
+                  icon="/icons/orange-tick.svg"
+                  title="5+ hours of tests and interviews"
+                  description="Hire the top 1% of 1.5 million+ developers from 150+ countries who have applied to Turing."
+                />
+                <FeatureItem
+                  icon="/icons/green-tick.svg"
+                  title="Seniority tests"
+                  description="Hire the top 1% of 1.5 million+ developers from 150+ countries who have applied to Turing."
+                />
               </div>
             </div>
 
-            <Image
-              src="/images/work-image.png"
-              alt="Why Hire Developers From Our Name banner"
-              width={500}
-              height={500}
-            />
+            <div className="flex justify-center">
+              <Image
+                src="/images/work-image.png"
+                alt="Rigorous Vetting Process"
+                width={500}
+                height={500}
+                className="w-full max-w-md h-auto"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className=" bg-[url(/images/bg-icon.png)] bg-no-repeat">
-        <div className="container mx-auto pt-20">
-          <h2 className="text-5xl text-primary text-center">
+      {/* Technology Competency Section */}
+      <section className="bg-[url(/images/bg-icon.png)] bg-no-repeat bg-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 lg:pt-20">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-primary text-center font-semibold">
             Our Diverse Technology Competency
           </h2>
-          <p className="text-secondary text-[0.938rem] max-w-xl text-center mx-auto mt-5 leading-8">
+          <p className="text-secondary text-sm md:text-[0.938rem] max-w-xl text-center mx-auto mt-4 md:mt-5 leading-7 md:leading-8 px-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&#39;s standard dummy
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
             text ever since
           </p>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-10">
-            {services.map((service, index) => (
+          <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8 md:mt-10">
+            {services.map((service) => (
               <ServiceCard
-                key={index}
+                key={service.id}
                 title={service.title}
                 icon={service.icon}
                 tags={service.tags}
@@ -291,12 +246,43 @@ const Hire = () => {
 
 export default Hire;
 
+// Feature Item Component
+interface FeatureItemProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const FeatureItem = ({ icon, title, description }: FeatureItemProps) => {
+  return (
+    <div className="flex gap-3 md:gap-4 items-start">
+      <Image
+        src={icon}
+        alt=""
+        className="mt-1 md:mt-2 flex-shrink-0"
+        width={20}
+        height={20}
+        loading="lazy"
+      />
+      <div>
+        <h4 className="text-primary text-lg sm:text-xl md:text-[1.375rem] font-medium">
+          {title}
+        </h4>
+        <p className="text-secondary text-sm md:text-[0.938rem] leading-6 md:leading-7 font-light max-w-lg mt-1">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+// Service Card Component
 interface ServiceCardProps {
   title: string;
-  icon: string; // e.g. "backend.svg"
+  icon: string;
   tags: string[];
-  borderColor: string; // Top border color (e.g., "#A78BFA" or "#F687B3")
-  backgroundColor: string; // e.g., "#FFF4F8"
+  borderColor: string;
+  backgroundColor: string;
   className?: string;
 }
 
@@ -306,19 +292,17 @@ export const ServiceCard = ({
   tags,
   borderColor,
   backgroundColor,
-
   className,
 }: ServiceCardProps) => {
   return (
-    <div
+    <article
       className={twMerge(
-        "relative p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+        "relative p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-lg",
         className
       )}
       style={
         {
           backgroundColor: backgroundColor,
-
           borderBottom: `6px solid ${borderColor}`,
         } as React.CSSProperties
       }
@@ -328,24 +312,29 @@ export const ServiceCard = ({
         src={`/images/${icon}`}
         width={50}
         height={50}
-        alt={title}
-        className="object-contain mb-6"
+        alt={`${title} icon`}
+        className="object-contain mb-4 md:mb-6 w-10 h-10 md:w-12 md:h-12"
+        loading="lazy"
       />
 
       {/* Title */}
-      <h3 className="mb-5 text-xl font-semibold text-gray-800">{title}</h3>
+      <h3 className="mb-4 md:mb-5 text-lg md:text-xl font-semibold text-gray-800">
+        {title}
+      </h3>
 
       {/* Tags */}
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+      <div className="flex flex-wrap items-center gap-x-2 md:gap-x-3 gap-y-2">
         {tags.map((tag, i) => (
           <React.Fragment key={i}>
-            <span className="rounded-full text-xs font-medium">{tag}</span>
+            <span className="text-xs font-medium text-gray-700">{tag}</span>
             {i < tags.length - 1 && (
-              <span className="text-gray-400 select-none">|</span>
+              <span className="text-gray-400 select-none" aria-hidden="true">
+                |
+              </span>
             )}
           </React.Fragment>
         ))}
       </div>
-    </div>
+    </article>
   );
 };
